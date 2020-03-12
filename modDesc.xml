@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<modDesc descVersion="46">
+    <author>LsModcompany / kevink98</author>
+    <version>1.0.0.0</version>
+    <title>
+        <en>GlobalCompany - Animal stable storages</en>
+        <de>GlobalCompany - Lager für Tierställe</de>
+    </title>
+    
+	<description>
+        <en>
+			<![CDATA[Square bales can be pressed with this stationary baler.
+
+Bale types: grass, hay, straw
+
+Baling presses: Press with and without stacker.
+
+The stacker can stack up to four bales on top of each other.
+
+Information: Mod only playable in combination with GlobalCompany!]]>
+		</en>
+        <de>
+			<![CDATA[Keine Lust, ständig Wasser nachzufüllen? Andauernd das Güllelager voll? Mit diesen platzierbaren Objekten wird dir geholfen!
+
+Wasserlager
+Beschreibung: Platziere dieses Objekt in der Nähe des Wassertrogs. Nach dem Befüllen des Lagers wird den Tieren automatisch Wasser nachgefüllt. Dadurch kann die Kapazität erhöht werden.
+Kosten: 30.000€
+
+Güllelager
+Beschreibung: Ist Gülle im Stall vorhanden wird es automtisch in dieses Lager geführt. Dadurch kann die Kapazität erhöht werden.
+Kosten: 30.000€
+
+Information: Mod nur in Verbindung mit GlobalCompany spielbar!]]>
+		</de>
+    </description>
+    
+	<iconFilename>icon_animalStableStorages.dds</iconFilename>
+    <multiplayer supported="true" />
+
+    <storeItems>
+        <storeItem xmlFilename="waterStorage.xml" />
+        <storeItem xmlFilename="slurryStorage.xml" />
+    </storeItems>
+	
+    <brands>
+        <brand name="GCPLACEABLE" title="GlobalCompany Placeable" image="../FS19_GlobalCompany/brand_placeable.dds"/>
+    </brands>
+	
+	<extraSourceFiles>
+		<sourceFile filename="scripts/GC_Checker.lua" />
+    </extraSourceFiles>
+	
+	<globalCompany minimumVersion="1.3.0.0" />
+</modDesc>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<placeable>
+    <storeData>
+        <name>$l10n_GlobalCompanyPlaceable_AnimalStableStorages_waterStorage_shoptItem</name>
+        <image>store_waterStorage.dds</image>
+        <price>30000</price>
+        <dailyUpkeep>5</dailyUpkeep>
+        <lifetime>1000</lifetime>
+        <rotation>0</rotation>
+        <brand>GCPLACEABLE</brand>
+        <specs>
+            <capacity>500000</capacity>
+            <fillTypes>water</fillTypes>
+        </specs>
+		<functions>
+			<function>$l10n_GlobalCompanyPlaceable_AnimalStableStorages_waterStorage_description</function>
+        </functions>
+        <species>placeable</species>
+        <category>globalCompanyPlaceable</category>
+    </storeData>
+
+    <placeableType>GC_ProductionFactoryPlaceable</placeableType>
+    <filename>WaterStorage.i3d</filename>
+    <placement testSizeX="1" testSizeZ="1" sizeX="1" sizeZ="1" useRandomYRotation="false" useManualYRotation="true" />
+	
+	<tipOcclusionUpdateArea sizeX="1" sizeZ="1" />	
+	
+	<!--clearAreas>
+        <clearArea startIndex="3|0" widthIndex="3|1" heightIndex="3|2"/>
+    </clearAreas>
+	
+	<leveling requireLeveling="true" maxSmoothDistance="5" maxSlope="30" maxEdgeAngle="20" >
+        <levelAreas>
+            <levelArea startNode="3|0" widthNode="3|1" heightNode="3|2" groundType="asphalt"/>
+        </levelAreas>
+    </leveling-->
+
+    <seasons>
+        <maskAreas>
+            <maskArea startNode="3|0" widthNode="3|1" heightNode="3|2" />
+        </maskAreas>
+    </seasons>	
+	
+    <triggerMarkers>
+        <triggerMarker node="5" />
+    </triggerMarkers>
+	
+	<productionFactories>
+		<productionFactory indexName="waterStorage" saveId="globalCompany_waterStorage">
+			<guiInformation title="GlobalCompanyPlaceable_AnimalStableStorages_waterStorage_shoptItem" imageFilename="store_waterStorage.dds" description="GlobalCompanyPlaceable_AnimalStableStorages_waterStorage_description" cameraFeed="guiCamera"/>
+			
+			<operation updateDelayMinutes="5" showInGlobalGUI="true" />
+			
+			<registerUnloadingTriggers>
+				<unloadingTrigger name="UnloadingTriggerLiquid" exactFillRootNode="liquidFillTriggerIn">
+					<manureSystemConnectors node="connector_vis_in" fillType="water">
+						<connector type="coupling" node="2|1" lockAnimationIndex="1" manureFlowAnimationIndex="2"/>
+					</manureSystemConnectors>
+				</unloadingTrigger>
+			</registerUnloadingTriggers>
+			
+			<registerInputProducts headerTitle="GlobalCompanyPlaceable_AnimalStableStorages_waterStorage_header_in">				
+				<inputProduct name="IP" capacity="500000" title="$l10n_fillType_water" > 
+					<fillTypes>
+						<fillType name="water" />
+					</fillTypes>			
+
+					<purchase fixedPricePerLitre="1.1" />	
+
+					<inputMethods>
+						<unloadingTrigger name="UnloadingTriggerLiquid"/>
+					</inputMethods>
+
+					<digitalDisplays>
+						<display displayType="LEVEL" numbers="DisplayIn" emptyNumberColor="0 1 0 1" numberColor="1 1 0 1" fullNumberColor="1 0 0 1"/>
+					</digitalDisplays>	
+				</inputProduct>
+			</registerInputProducts>
+			
+			<registerOutputProducts headerTitle="GlobalCompanyPlaceable_AnimalStableStorages_waterStorage_header_out">
+				<outputProduct name="OP" fillType="water" capacity="50000" >					
+                    <outputMethods>
+                        <animalTrough searchNode="animalTrough" modulName="water" />
+					</outputMethods>
+				</outputProduct>
+			</registerOutputProducts>
+			
+			<productLines>
+				<productLine autoLineStart="true" outputPerHour="1000000" title="GlobalCompanyPlaceable_AnimalStableStorages_waterStorage_shoptItem" showInGUI="true">
+					<inputs>
+						<inputProduct name="IP" percent="100" />
+					</inputs>
+					<playerTrigger playerTriggerNode="PlayerTrigger" showPopupUI="true"/>	
+					<outputs>
+						<outputProduct name="OP" percent="100" />
+					</outputs>													
+				</productLine>				
+			</productLines>	
+			
+			<i3dMappings>  
+				<i3dMapping id="liquidFillTriggerIn" node="0|0"/>
+				<i3dMapping id="DisplayIn" node="0|1"/>                
+				<i3dMapping id="PlayerTrigger" node="2"/>
+				<i3dMapping id="guiCamera" node="6"/>
+    			<i3dMapping id="connector_vis_in" node="7"/>
+               	<i3dMapping id="output" node="1"/>
+			</i3dMappings>				
+		</productionFactory>
+	</productionFactories>	
+
+	<animatedObjects>		
+		<animatedObject>
+			<animation duration="0.25">
+				<part node="7|1">
+                    <keyFrame time="0.0" rotation="0 0 0"/>
+                    <keyFrame time="1" rotation="0 0 -125"/>
+                </part>
+                <part node="7|2">
+                    <keyFrame time="0.0" rotation="0 0 0"/>
+                    <keyFrame time="1" rotation="0 0 -15"/>
+                </part>
+                <part node="7|2|0">
+                    <keyFrame time="0.0" rotation="0 0 0"/>
+                    <keyFrame time="1" rotation="0 0 5.45"/>
+                </part>           
+			</animation>
+		</animatedObject>
+		<animatedObject>
+			<animation duration="0.25">
+				<part node="7|3">
+                    <keyFrame time="0.0" rotation="0 0 0"/>
+                    <keyFrame time="1" rotation="0 0 90"/>
+                </part>
+                <part node="7|3|0">
+                    <keyFrame time="0.0" rotation="0 0 0"/>
+                    <keyFrame time="1" rotation="0 0 -124"/>
+                </part>
+                <part node="7|4">
+                    <keyFrame time="0.0" translation="-0.074 -0.059 0.003"/>
+                    <keyFrame time="1" translation="-0.074 0.071 0.003"/>
+                </part>
+			</animation>
+		</animatedObject>
+	</animatedObjects>
+
+</placeable>

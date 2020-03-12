@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="Sample Mod Map 1" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="8.2.0"/>
+  </Asset>
+
+  <Files>
+    <File fileId="8" filename="$data/fillPlanes/liquidManure_diffuse.dds"/>
+    <File fileId="9" filename="$data/fillPlanes/liquidManure_normal.dds"/>
+    <File fileId="10" filename="$data/fillPlanes/liquidManure_specular.dds"/>
+    <File fileId="14" filename="$data/maps/textures/shared/warningStripes_diffuse.dds"/>
+    <File fileId="15" filename="$data/maps/textures/shared/warningStripes_normal.dds"/>
+    <File fileId="16" filename="$data/maps/textures/shared/warningStripes_specular.dds"/>
+    <File fileId="4" filename="$data/shaders/numberShader.xml"/>
+    <File fileId="19" filename="$data/shaders/vehicleShader.xml"/>
+    <File fileId="3" filename="$data/shared/numbers_diffuse.dds"/>
+    <File fileId="12" filename="textures/AO_Dock.dds"/>
+    <File fileId="13" filename="textures/AO_Guellebecken.dds"/>
+    <File fileId="5" filename="textures/details_diffuse.dds"/>
+    <File fileId="6" filename="textures/details_normal.dds"/>
+    <File fileId="7" filename="textures/details_specular.dds"/>
+    <File fileId="23" filename="textures/lagoonDetails_normal.dds"/>
+    <File fileId="24" filename="textures/lagoonDetails_specular.dds"/>
+    <File fileId="17" filename="textures/manureDocking_normal.dds"/>
+    <File fileId="18" filename="textures/manureDocking_specular.dds"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="lambert2" materialId="13" diffuseColor="0.494118 0.494118 0.494118 1">
+    </Material>
+    <Material name="liquidManure_mat" materialId="14">
+      <Texture fileId="8"/>
+      <Normalmap fileId="9"/>
+      <Glossmap fileId="10"/>
+    </Material>
+    <Material name="number_mat" materialId="8" alphaBlending="true" customShaderId="4">
+      <Texture fileId="3"/>
+      <CustomParameter name="number" value="-1 0 0 0"/>
+      <CustomParameter name="numberColor" value="0.0009 0.0021 0.0144 1"/>
+    </Material>
+    <Material name="couplings_mat" materialId="7" diffuseColor="0.494118 0.494118 0.494118 1" customShaderId="19" customShaderVariation="colorMask">
+      <Normalmap fileId="17"/>
+      <Glossmap fileId="18"/>
+      <CustomParameter name="RDT" value="0 0 0 0"/>
+      <CustomParameter name="dirtColor" value="0.2 0.14 0.08 0"/>
+      <CustomParameter name="colorMat0" value="0.8 0.55 0.05 1"/>
+      <CustomParameter name="colorMat1" value="1 0.1 0.1 1"/>
+      <CustomParameter name="colorMat2" value="0.1 1 0.1 1"/>
+      <CustomParameter name="colorMat3" value="0.1 0.1 1 1"/>
+      <CustomParameter name="colorMat4" value="1 1 0.1 1"/>
+      <CustomParameter name="colorMat5" value="0.05 0.05 0.05 1"/>
+      <CustomParameter name="colorMat6" value="1 0.1 1 1"/>
+      <CustomParameter name="colorMat7" value="0.1 1 1 1"/>
+    </Material>
+    <Material name="acmat0" materialId="9">
+      <Texture fileId="5"/>
+      <Normalmap fileId="6"/>
+      <Glossmap fileId="7"/>
+    </Material>
+    <Material name="Material" materialId="11" diffuseColor="0.8 0.8 0.8 1">
+    </Material>
+    <Material name="lambert4" materialId="5">
+      <Texture fileId="12"/>
+    </Material>
+    <Material name="warningStripes_mat" materialId="6">
+      <Texture fileId="14"/>
+      <Normalmap fileId="15"/>
+      <Glossmap fileId="16"/>
+    </Material>
+    <Material name="UnnamedMaterial" materialId="4" diffuseColor="1 1 1 1">
+    </Material>
+    <Material name="lagoonDetails_mat" materialId="12" diffuseColor="0.494118 0.494118 0.494118 1" customShaderId="19" customShaderVariation="colorMask">
+      <Normalmap fileId="23"/>
+      <Glossmap fileId="24"/>
+      <CustomParameter name="RDT" value="0 0 0 0"/>
+      <CustomParameter name="dirtColor" value="0.2 0.14 0.08 0"/>
+      <CustomParameter name="colorMat0" value="0.1 0.15 0.5 1"/>
+      <CustomParameter name="colorMat1" value="1 0.1 0.1 1"/>
+      <CustomParameter name="colorMat2" value="0.1 1 0.1 1"/>
+      <CustomParameter name="colorMat3" value="0.1 0.1 1 1"/>
+      <CustomParameter name="colorMat4" value="1 1 0.1 1"/>
+      <CustomParameter name="colorMat5" value="0.05 0.05 0.05 1"/>
+      <CustomParameter name="colorMat6" value="1 0.1 1 1"/>
+      <CustomParameter name="colorMat7" value="0.1 1 1 1"/>
+    </Material>
+    <Material name="lambert3" materialId="10">
+      <Texture fileId="13"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="GuelleStorage.i3d.shapes">
+  </Shapes>
+
+
+  <Dynamics>
+  </Dynamics>
+
+  <Scene>
+    <Shape shapeId="1" name="SlurryStorage" static="true" nodeId="35" materialIds="4" nonRenderable="true" distanceBlending="false">
+      <TransformGroup name="input" nodeId="36"/>
+      <TransformGroup name="output" nodeId="37">
+        <Shape shapeId="2" name="liquidFillTriggerOut" translation="-11.2409 -0.611609 0.108813" rotation="-180 0 -180" static="true" trigger="true" collisionMask="10485760" nodeId="38" materialIds="13" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+        <TransformGroup name="DisplayOut" translation="-7.44215 2.86089 0.818395" rotation="-180 -90 -180" nodeId="39">
+          <Shape shapeId="3" name="numberPart1" translation="0.399723 0.1 0.08" clipDistance="75" nodeId="40" materialIds="8" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="4" name="numberPart2" translation="0.309 0.1 0.08" clipDistance="75" nodeId="41" materialIds="8" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="4" name="numberPart3" translation="0.219248 0.1 0.08" clipDistance="75" nodeId="42" materialIds="8" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="4" name="numberPart4" translation="0.129248 0.1 0.08" clipDistance="75" nodeId="43" materialIds="8" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="4" name="numberPart5" translation="0.039248 0.1 0.08" clipDistance="75" nodeId="44" materialIds="8" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="4" name="numberPart6" translation="-0.050752 0.1 0.08" clipDistance="75" nodeId="45" materialIds="8" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="4" name="numberPart7" translation="-0.140752 0.1 0.08" clipDistance="75" nodeId="46" materialIds="8" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="4" name="numberPart8" translation="-0.230752 0.1 0.08" clipDistance="75" nodeId="47" materialIds="8" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="4" name="numberPart9" translation="-0.320752 0.1 0.08" clipDistance="75" nodeId="48" materialIds="8" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="4" name="numberPart10" translation="-0.410752 0.1 0.08" clipDistance="75" nodeId="49" materialIds="8" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="5" name="Gehaeuse" scale="0.7 1 1" nodeId="50" materialIds="9" castsShadows="true" receiveShadows="true"/>
+          <Shape shapeId="6" name="Halterung" translation="4.93438e-09 0.0914671 0.0295773" rotation="0 -5.78539e-27 -1.15013e-06" scale="0.7 1 1" nodeId="51" materialIds="9" castsShadows="true" receiveShadows="true"/>
+        </TransformGroup>
+        <Shape shapeId="7" name="liquidManurePlane" translation="0.54 0.302 0.0866724" nodeId="52" materialIds="14" castsShadows="true" receiveShadows="true"/>
+      </TransformGroup>
+      <Shape shapeId="8" name="PlayerTrigger" translation="-10.5966 1.83383 0.721" rotation="-90 90 -180" static="true" trigger="true" collisionMask="1048576" nodeId="53" materialIds="11" nonRenderable="true"/>
+      <TransformGroup name="StartIndex" nodeId="54">
+        <TransformGroup name="StartIndex" translation="-12.553 0 11.151" nodeId="55"/>
+        <TransformGroup name="widthIndex" translation="-12.553 0 -8.93266" nodeId="56"/>
+        <TransformGroup name="heightIndex" translation="8.51774 0 11.151" nodeId="57"/>
+      </TransformGroup>
+      <TransformGroup name="Objects" nodeId="58">
+        <TransformGroup name="Gllebecken" scale="1.5 1.5 1.5" nodeId="59">
+          <Shape shapeId="9" name="polySurface95" static="true" nodeId="60" materialIds="5,10,13" castsShadows="true" receiveShadows="true"/>
+        </TransformGroup>
+      </TransformGroup>
+      <TransformGroup name="waringStripes" nodeId="61">
+        <TransformGroup name="warningStripesLiquidManureTrigger" translation="-11.2636 -1.90735e-06 0.15349" rotation="-0 90 0" clipDistance="25" nodeId="62">
+          <Shape shapeId="10" name="warningStripesCorner1" translation="-2.5 2.27374e-15 -1.5" clipDistance="25" nodeId="63" materialIds="6" receiveShadows="true" decalLayer="1"/>
+          <Shape shapeId="11" name="warningStripesCorner2" translation="2.5 0 -1.5" clipDistance="25" nodeId="64" materialIds="6" receiveShadows="true" decalLayer="1"/>
+          <Shape shapeId="10" name="warningStripesCorner3" translation="2.5 2.27374e-15 1.5" rotation="0 180 0" clipDistance="25" nodeId="65" materialIds="6" receiveShadows="true" decalLayer="1"/>
+          <Shape shapeId="11" name="warningStripesCorner4" translation="-2.5 1.13687e-15 1.5" rotation="0 180 0" clipDistance="25" nodeId="66" materialIds="6" receiveShadows="true" decalLayer="1"/>
+        </TransformGroup>
+      </TransformGroup>
+      <Camera name="guiCamera" translation="-14.0803 13.8049 10.1115" rotation="-41.9405 -46.9812 -1.84977e-05" nodeId="67" fov="60" nearClip="0.1" farClip="10000" orthographicHeight="1"/>
+      <Shape shapeId="12" name="connector_vis_out" translation="-9.6967 0.651796 0.0772382" rotation="0 0.605818 0" static="true" clipDistance="300" nodeId="68" materialIds="7" castsShadows="true" receiveShadows="true">
+        <Shape shapeId="13" name="pitConnector_vis" translation="0.775696 -2.28929 -3.3959e-05" rotation="0 10 0" static="true" clipDistance="300" nodeId="69" materialIds="12" castsShadows="true" receiveShadows="true"/>
+        <Shape shapeId="14" name="handleFront" translation="-0.265322 -0.178498 -0.0323715" clipDistance="300" nodeId="70" materialIds="7" castsShadows="true" receiveShadows="true"/>
+        <Shape shapeId="15" name="lockFront" translation="-0.347465 -0.44577 0.00712772" clipDistance="300" nodeId="71" materialIds="7" castsShadows="true" receiveShadows="true">
+          <Shape shapeId="16" name="lockPartFront" translation="-0.0687896 0.23925 0.00128294" clipDistance="300" nodeId="72" materialIds="7" castsShadows="true" receiveShadows="true"/>
+          <TransformGroup name="refFront" translation="0.0350941 0.141365 0" rotation="0 -90 15" clipDistance="300" nodeId="73"/>
+        </Shape>
+        <Shape shapeId="17" name="flowFront" translation="-0.141357 0.0101463 0.00395277" clipDistance="300" nodeId="74" materialIds="7" castsShadows="true" receiveShadows="true">
+          <Shape shapeId="18" name="flowPartFront" translation="0.102893 -0.0243746 -0.00403163" clipDistance="300" nodeId="75" materialIds="7" castsShadows="true" receiveShadows="true"/>
+        </Shape>
+        <Shape shapeId="19" name="flowPistonFront" translation="-0.0736097 -0.0589116 0.00302751" clipDistance="300" nodeId="76" materialIds="7" castsShadows="true" receiveShadows="true"/>
+      </Shape>
+    </Shape>
+  </Scene>
+
+  <UserAttributes>
+    <UserAttribute nodeId="60">
+      <Attribute name="currentUVSet" type="string" value="map1"/>
+    </UserAttribute>
+  </UserAttributes>
+
+</i3D>

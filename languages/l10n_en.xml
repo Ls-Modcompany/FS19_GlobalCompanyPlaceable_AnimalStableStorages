@@ -1,0 +1,15 @@
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<l10n>
+	<elements>
+		<e k="GlobalCompanyPlaceable_AnimalStableStorages_slurryStorage_shoptItem" v="Liquidmanurestorage"/>
+		<e k="GlobalCompanyPlaceable_AnimalStableStorages_slurryStorage_description" v="Extend the capacity of the slurry storage in your barn. Must be placed near the barn."/>
+		<e k="GlobalCompanyPlaceable_AnimalStableStorages_slurryStorage_header_in" v="Storage process"/>
+		<e k="GlobalCompanyPlaceable_AnimalStableStorages_slurryStorage_header_out" v="Liquidmanurestorage"/>	
+
+		<e k="GlobalCompanyPlaceable_AnimalStableStorages_waterStorage_shoptItem" v="Waterstorage"/>
+		<e k="GlobalCompanyPlaceable_AnimalStableStorages_waterStorage_description" v="Expand the capacity of the water storage in your stable. Must be placed near the barn."/>
+		<e k="GlobalCompanyPlaceable_AnimalStableStorages_waterStorage_header_in" v="Waterstorage"/>
+		<e k="GlobalCompanyPlaceable_AnimalStableStorages_waterStorage_header_out" v="Outsourcing process"/>			
+	</elements>
+</l10n>

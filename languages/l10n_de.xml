@@ -1,0 +1,15 @@
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<l10n>
+	<elements>
+		<e k="GlobalCompanyPlaceable_AnimalStableStorages_slurryStorage_shoptItem" v="Güllelager"/>
+		<e k="GlobalCompanyPlaceable_AnimalStableStorages_slurryStorage_description" v="Erweitere die Kapazität des Güllelagers in deinem Stall. Muss in der Nähe des Stalles platziert werden."/>
+		<e k="GlobalCompanyPlaceable_AnimalStableStorages_slurryStorage_header_in" v="Einlagerungsprozess"/>
+		<e k="GlobalCompanyPlaceable_AnimalStableStorages_slurryStorage_header_out" v="Güllelager"/>	
+
+		<e k="GlobalCompanyPlaceable_AnimalStableStorages_waterStorage_shoptItem" v="Wasserlager"/>
+		<e k="GlobalCompanyPlaceable_AnimalStableStorages_waterStorage_description" v="Erweitere die Kapazität des Wasserlagers in deinem Stall. Muss in der Nähe des Stalles platziert werden."/>
+		<e k="GlobalCompanyPlaceable_AnimalStableStorages_waterStorage_header_in" v="Wasserlager"/>
+		<e k="GlobalCompanyPlaceable_AnimalStableStorages_waterStorage_header_out" v="Auslagerungsprozess"/>			
+	</elements>
+</l10n>
