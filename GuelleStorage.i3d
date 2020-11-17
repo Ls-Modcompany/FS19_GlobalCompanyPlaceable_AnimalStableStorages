@@ -102,7 +102,7 @@
     <Shape shapeId="1" name="SlurryStorage" static="true" nodeId="35" materialIds="4" nonRenderable="true" distanceBlending="false">
       <TransformGroup name="input" nodeId="36"/>
       <TransformGroup name="output" nodeId="37">
-        <Shape shapeId="2" name="liquidFillTriggerOut" translation="-11.2409 -0.611609 0.108813" rotation="-180 0 -180" static="true" trigger="true" collisionMask="10485760" nodeId="38" materialIds="13" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
+        <Shape shapeId="2" name="liquidFillTriggerOut" translation="-11.2409 -0.611609 0.108813" rotation="-180 0 -180" static="true" trigger="true" collisionMask="1088421888" nodeId="38" materialIds="13" castsShadows="true" receiveShadows="true" nonRenderable="true"/>
         <TransformGroup name="DisplayOut" translation="-7.44215 2.86089 0.818395" rotation="-180 -90 -180" nodeId="39">
           <Shape shapeId="3" name="numberPart1" translation="0.399723 0.1 0.08" clipDistance="75" nodeId="40" materialIds="8" castsShadows="true" receiveShadows="true"/>
           <Shape shapeId="4" name="numberPart2" translation="0.309 0.1 0.08" clipDistance="75" nodeId="41" materialIds="8" castsShadows="true" receiveShadows="true"/>
